@@ -1,16 +1,16 @@
 <?php
 
-namespace Liberu\Foundation\Authorization;
+namespace Liberu\Foundation\RolesPermissions;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use Liberu\Foundation\Authorization\Contracts\PrivilegedActor;
-use Liberu\Foundation\Authorization\Models\Role;
-use Liberu\Foundation\Authorization\Policies\RolePolicy;
-use Liberu\Foundation\Authorization\Registry\PermissionRegistry;
-use Liberu\Foundation\Authorization\Services\AnyTeamRoleLookup;
+use Liberu\Foundation\RolesPermissions\Contracts\PrivilegedActor;
+use Liberu\Foundation\RolesPermissions\Models\Role;
+use Liberu\Foundation\RolesPermissions\Policies\RolePolicy;
+use Liberu\Foundation\RolesPermissions\Registry\PermissionRegistry;
+use Liberu\Foundation\RolesPermissions\Services\AnyTeamRoleLookup;
 
-final class AuthorizationServiceProvider extends ServiceProvider
+final class RolesPermissionsServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
