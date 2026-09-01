@@ -14,7 +14,7 @@ final class PermissionRegistry
             throw new InvalidArgumentException('Permission must use {module}.{resource}.{action}.');
         }if (isset($this->permissions[$permission])) {
             throw new InvalidArgumentException("Permission [{$permission}] is already declared.");
-        }$this->permissions[$permission] = ['owner' => $owner, 'description' => $description];
+        }$this->permissions[$permission] = compact('owner', 'description');
     }
 
     public function all(): array
