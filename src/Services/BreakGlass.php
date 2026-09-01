@@ -9,7 +9,7 @@ final class BreakGlass
 {
     public function grant(string|int $actorId, string $permission, string $reason, \DateTimeImmutable $expiresAt, bool $stronglyAuthenticated): int
     {
-        if (! $stronglyAuthenticated || trim($reason) === '' || $expiresAt <= new \DateTimeImmutable()) {
+        if (! $stronglyAuthenticated || trim($reason) === '' || $expiresAt <= new \DateTimeImmutable) {
             throw new RuntimeException('Break-glass access requires strong authentication, reason, and future expiry.');
         }
 
