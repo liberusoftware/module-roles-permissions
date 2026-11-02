@@ -19,7 +19,7 @@
       "name": "roles-permissions"
     }
   },
-  "version": "1.5.1",
+  "version": "1.6.0",
   "autoload-dev": {
     "psr-4": {
       "Liberu\\Foundation\\RolesPermissions\\Tests\\": "tests/"
