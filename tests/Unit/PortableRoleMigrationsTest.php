@@ -1,6 +1,5 @@
 <?php
 
-use App\Support\PermissionCatalog;
 use Illuminate\Cache\ArrayStore;
 use Illuminate\Cache\Repository as CacheRepository;
 use Illuminate\Config\Repository;
@@ -91,7 +90,8 @@ it('backfills the configured actor morph while preserving global and unrelated a
 });
 
 it('allows hosts without a legacy permission catalog to migrate', function () {
-    expect(class_exists(PermissionCatalog::class))->toBeFalse();
+    config(['permission.catalog' => 'UninstalledHostPermissionCatalog']);
+    expect(class_exists('UninstalledHostPermissionCatalog'))->toBeFalse();
     $migration = require dirname(__DIR__, 2).'/database/migrations/2026_07_10_000100_seed_role_permissions.php';
     $migration->up();
     $migration->down();
